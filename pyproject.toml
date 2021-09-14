@@ -1,0 +1,37 @@
+[tool.poetry]
+authors = ["vduseev <vagiz@duseev.com>"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Environment :: Console",
+]
+description = "CLI tool to build SQLite table from AWS EC2 prices."
+documentation = "https://github.com/vduseev/aws-ec2-pricing"
+homepage = "https://github.com/vduseev/aws-ec2-pricing"
+keywords = ["aws", "ec2", "pricing", "sql"]
+license = "Apache-2.0"
+maintainers = ["vduseev <vagiz@duseev.com>"]
+name = "aws-ec2-pricing"
+packages = [
+  {include = "ec2pricing"},
+]
+readme = "README.md"
+repository = "https://github.com/vduseev/aws-ec2-pricing"
+version = "0.1.9"
+
+[tool.poetry.scripts]
+ec2pricing = "ec2pricing:cli"
+
+[tool.poetry.dependencies]
+boto3 = "^1.18.40"
+click = "^8.0.1"
+prettytable = "^2.2.0"
+python = "^3.9"
+
+[tool.poetry.dev-dependencies]
+black = "^21.8b0"
+bump2version = "^1.0.1"
+ipython = "^7.27.0"
+
+[build-system]
+build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core>=1.0.0"]
