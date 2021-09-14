@@ -16,7 +16,7 @@ packages = [
 ]
 readme = "README.md"
 repository = "https://github.com/vduseev/aws-ec2-pricing"
-version = "0.1.9"
+version = "0.1.10"
 
 [tool.poetry.scripts]
 ec2pricing = "ec2pricing:cli"
