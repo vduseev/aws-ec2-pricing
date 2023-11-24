@@ -25,7 +25,7 @@ Collect AWS EC2 prices from AWS API to SQL table to analyze them.
 Make sure AWS credentials are set as environment variables or are available otherwise to `boto3` library
 which this program uses to connect to AWS API.
 
-The AWS Pricing API is [not available in all regions](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/using-price-list-query-api.html#price-list-query-api-endpoints); this program defaults to connecting to the Pricing API endpoint in `us-east-1` (N. Virginia), and permits changing regions to the other available endpoints (`eu-central-1`, Frankfurt; `ap-south-1`, Mumbai) using the `--region` option.
+The AWS Price List Query API is [not available in all regions](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/using-price-list-query-api.html#price-list-query-api-endpoints); this program defaults to using the API endpoint in `us-east-1` (N. Virginia), and permits changing regions to the other available endpoints (`eu-central-1`, Frankfurt; `ap-south-1`, Mumbai) using the `--region` option.
 
 ```shell
 Usage: ec2pricing [OPTIONS] COMMAND [ARGS]...
