@@ -105,7 +105,11 @@ logger = logging.getLogger(__name__)
 
 @click.group()
 @click.version_option(version=__version__)
-def main():
+@click.option("-r", "--region", default="us-east-1", type=click.Choice(['us-east-1','eu-central-1','ap-south-1']), help="The AWS region to use. Limited to specific regions where the Pricing API is available; default: us-east-1")
+def main(region):
+    global _region 
+    
+    _region = region
     pass
 
 
@@ -336,7 +340,7 @@ def pricing():
     global _client
 
     if not _client:
-        _client = boto3.client("pricing")
+        _client = boto3.client("pricing", region_name=_region)
     return _client
 
 
